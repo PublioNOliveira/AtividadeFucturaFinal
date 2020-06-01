@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Atualizar Telefone</title>
+</h:head>
+
+<h:body>
+	<h:form>
+			<p:dialog header="Atualização de Telefone" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+				<p:outputLabel value="DDD" />
+				<p:inputText value="#{TelefoneBean.telefone.ddd}" />
+				<p:outputLabel value="NÚMERO" />
+				<p:inputText value="#{TelefoneBean.telefone.numero_tel}" />
+				<p:outputLabel value="TIPO" />
+				<p:inputText value="#{TelefoneBean.telefone.tipo}" />
+				<p:outputLabel value="CPF_FUNCIONÁRIO" />
+				<h:outputText value="#{TelefoneBean.telefone.cpf_func}" />			
+			</p:panelGrid>
+		
+			<p:panelGrid columns="2">
+				<p:commandButton value="Voltar" action="Atualizar" />
+				<p:commandButton value="Atualizar" update="@form"  actionListener="#{TelefoneBean.AlterarTelefone}" ajax="true" action="AtualizarTelefone"/>
+			</p:panelGrid>
+	</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>

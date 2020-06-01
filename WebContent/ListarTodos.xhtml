@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Lista todos</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="FUNCIONÁRIOS" modal="true" visible="true"> 
+				
+			<p:panelGrid columns="1">
+				<p:commandButton value="Sair" action="Listar" />
+			</p:panelGrid>
+			
+			<p:dataTable var="funcionario" value="#{FuncionarioBean.listaFuncionario}">
+				<p:column headerText="Nome">
+					<h:outputText value="#{funcionario.nome}" />
+				</p:column>
+				<p:column headerText="Email">
+					<h:outputText value="#{funcionario.email}" />
+				</p:column>
+				<p:column headerText="Senha">
+					<h:outputText value="#{funcionario.senha}" />
+				</p:column>
+				<p:column headerText="Cpf">
+					<h:outputText value="#{funcionario.cpf}" />
+				</p:column>
+				<p:column headerText="Matrícula">
+					<h:outputText value="#{funcionario.matricula}" />
+				</p:column>
+				
+				<p:column headerText="Logradouro">
+					<h:outputText value="#{funcionario.endereco.logradouro}" />
+				</p:column>
+				<p:column headerText="Número">
+					<h:outputText value="#{funcionario.endereco.numero}" />
+				</p:column>
+				<p:column headerText="Cep">
+					<h:outputText value="#{funcionario.endereco.cep}" />
+				</p:column>
+				<p:column headerText="Bairro">
+					<h:outputText value="#{funcionario.endereco.bairro}" />
+				</p:column>
+				<p:column headerText="Cidade">
+					<h:outputText value="#{funcionario.endereco.cidade}" />
+				</p:column>
+				<p:column headerText="Estado">
+					<h:outputText value="#{funcionario.endereco.estado}" />
+				</p:column>
+				<p:column headerText="País">
+					<h:outputText value="#{funcionario.endereco.pais}" />
+				</p:column>
+				<p:column headerText="DDD">
+					<h:outputText value="#{funcionario.telefone.ddd}" />
+				</p:column>
+				<p:column headerText="Número do telefone">
+					<h:outputText value="#{funcionario.telefone.numero}" />
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{funcionario.telefone.tipo}" />
+				</p:column>
+				<p:column headerText="cpf_func">
+					<h:outputText value="#{funcionario.telefone.cpf_func}" />
+				</p:column>
+				
+				</p:dataTable>
+			
+
+
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

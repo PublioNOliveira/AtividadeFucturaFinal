@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Pesquisar</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="Pesquisar" modal="true" visible="true"> 
+			<p:outputLabel value="Pesquisar" />
+				
+			<p:panelGrid columns="3">
+				<p:outputLabel value="Digite o cpf para pesquisar o funcionário"/>
+				<p:inputText maxlength="11" value="#{FuncionarioBean.cpf}" />
+				<p:commandButton value="Pesquisar" update="@form" actionListener="#{FuncionarioBean.PesquisarFuncionario}"  action="PesquisarFuncionario" />
+				<p:outputLabel value="Digite o número para pesquisar o telefone"/>
+				<p:inputText maxlength="11" value="#{TelefoneBean.numero_tel}" />
+				<p:commandButton value="Pesquisar" update="@form" actionListener="#{TelefoneBean.PesquisarTelefone}"  action="PesquisarTelefone" />
+				<p:commandButton value="Sair" action="Funcionarios"/>
+			</p:panelGrid>	
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

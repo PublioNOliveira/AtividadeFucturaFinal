@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Apagar</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="Apagar" modal="true" visible="true"> 
+			<p:outputLabel value="TELA DE EXCLUIR" />
+				
+			<p:panelGrid columns="3">
+				<p:outputLabel value="Digite o cpf para excluir o funcionário"/>
+				<p:inputText maxlength="11" value="#{FuncionarioBean.cpf}" />
+				<p:commandButton value="Deletar" update="@form"	action="#{FuncionarioBean.ExcluirFuncionario}" />
+				<p:outputLabel value="Digite o número para excluir o telefone"/>
+				<p:inputText maxlength="11" value="#{TelefoneBean.numero_tel}" />
+				<p:commandButton value="Deletar" update="@form"	action="#{TelefoneBean.ExcluirTelefone}" />
+			</p:panelGrid>	
+				
+			<p:panelGrid columns="1">		
+				<p:commandButton value="Sair" action="Funcionarios" />
+			</p:panelGrid>
+
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Telefones</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="TELEFONES" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+				<p:outputLabel value="PARA EXCLUIR O ÚUMERO" />
+				<p:inputText maxlength="11" value="#{TelefoneBean.numero_tel}" />
+			</p:panelGrid>
+			
+			<p:panelGrid columns="4">
+				<p:commandButton value="Sair" action="Login" />
+				<p:commandButton value="Deletar" update="@form"	action="#{TelefoneBean.ExcluirTelefone}" />
+			</p:panelGrid>
+			
+			
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

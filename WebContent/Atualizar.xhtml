@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Atualização</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="Atualização" modal="true" visible="true"> 
+			<p:outputLabel value="Atualização" />
+				
+			<p:panelGrid columns="3">
+				<p:outputLabel value="Digite o cpf para atualizar o funcionário"/>
+				<p:inputText maxlength="11" value="#{FuncionarioBean.cpf}" />		
+				<p:commandButton value="Atualizar Funcionário" actionListener="#{FuncionarioBean.PesquisarFuncionario}" action="AtualizarFuncionario" />
+				<p:outputLabel value="Digite o número para atualizar o telefone"/>
+				<p:inputText maxlength="11" value="#{TelefoneBean.numero_tel}" />
+				<p:commandButton value="Atualizar Telefone"  actionListener="#{TelefoneBean.PesquisarTelefone}" action="AtualizarTelefone" />
+				<p:commandButton value="Sair" action="Funcionarios" />
+			</p:panelGrid>
+
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

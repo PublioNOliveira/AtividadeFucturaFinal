@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Cadastrar Telefone</title>
+</h:head>
+
+<h:body>
+	<h:form>
+			<p:dialog header="Cadastro de telefone" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+			
+				<p:outputLabel value="DDD"  />
+				<p:inputText maxlength="2" value="#{TelefoneBean.ddd}" />
+				<p:outputLabel value="Número do telefone" />
+				<p:inputText  value="#{TelefoneBean.numero_tel}" />
+				<p:outputLabel value="Tipo" />
+				<p:inputText  value="#{TelefoneBean.tipo}" />				
+				<p:outputLabel value="Cpf do funcionário" />
+				<p:inputText  value="#{TelefoneBean.cpf_func}" />						
+				
+			</p:panelGrid>
+		
+			<p:panelGrid columns="2">
+				<p:commandButton value="Voltar" action="Cadastro" />
+				<p:commandButton value="Cadastrar" update="@form" action="#{TelefoneBean.CadastrarTelefone}"/>
+			</p:panelGrid>
+	</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>

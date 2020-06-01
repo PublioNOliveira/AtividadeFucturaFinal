@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Funcionários</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="FUNCIONÁRIOS" modal="true" visible="true"> 
+			<p:outputLabel value="BEM VINDO A TELA DE FUNCIONÁRIOS, ESCOLHA A OPÇÃO DESEJADA" />
+			
+				<p:panelGrid columns="5">
+			
+				<p:commandButton value="Deletar"  	action="Apagar" />
+				<p:commandButton value="Atualizar" action="Atualizar" />
+				<p:commandButton value="Pesquisar" action="Pesquisar"/>
+				<p:commandButton value="Cadastros" action="Cadastro" />
+				<p:commandButton value="Listar" action="Listar"/>
+				
+			</p:panelGrid>
+			<p:panelGrid columns="1">
+				<p:commandButton value="Sair" action="Login" />				
+			</p:panelGrid>
+
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

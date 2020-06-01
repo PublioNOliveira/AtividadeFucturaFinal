@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Pesquisa de Telefone</title>
+</h:head>
+
+<h:body>
+	<h:form>
+			<p:dialog header="Pesquisa de telefone" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+				<p:outputLabel value="DDD" />
+				<h:outputText value="#{TelefoneBean.telefone.ddd}" />
+				<p:outputLabel value="NÚMERO" />
+				<h:outputText value="#{TelefoneBean.telefone.numero_tel}" />
+				<p:outputLabel value="Tipo" />
+				<h:outputText   value="#{TelefoneBean.telefone.tipo}" />
+				<p:outputLabel value="cpf_funcionario" />
+				<h:outputText   value="#{TelefoneBean.telefone.cpf_func}" />
+			</p:panelGrid>
+		
+			<p:panelGrid columns="1">
+			<p:commandButton value="Voltar" action="Pesquisar" />			
+			</p:panelGrid>
+	</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>

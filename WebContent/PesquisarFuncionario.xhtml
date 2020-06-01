@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Pesquisa de Funcionário</title>
+</h:head>
+
+<h:body>
+	<h:form>
+			<p:dialog header="Pesquisa de funcionário" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Nome" />
+				<h:outputText value="#{FuncionarioBean.funcionario.nome}" />
+				<p:outputLabel value="Email:" />
+				<h:outputText value="#{FuncionarioBean.funcionario.email}" />
+				<p:outputLabel value="Senha" />
+				<h:outputText   value="#{FuncionarioBean.funcionario.senha}" />
+				<p:outputLabel value="CPF" />
+				<h:outputText   maxlength="11" value="#{FuncionarioBean.funcionario.cpf}" />
+				<p:outputLabel value="Matrícula" />
+				<h:outputText   value="#{FuncionarioBean.funcionario.matricula}" />
+				<p:outputLabel value="Logradouro" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.logradouro}" />
+				<p:outputLabel value="Número" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.numero}" />
+				<p:outputLabel value="Cep" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.cep}" />
+				<p:outputLabel value="Bairro" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.bairro}" />
+				<p:outputLabel value="Cidade" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.cidade}" />
+				<p:outputLabel value="Estado" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.estado}" />
+				<p:outputLabel value="País" />
+				<h:outputText  value="#{FuncionarioBean.funcionario.endereco.pais}" />
+				
+			</p:panelGrid>
+		     <p:fieldset legend="Telefones">
+                <p:dataTable var="telefone" value="#{FuncionarioBean.funcionario.listaTelefone}">
+				<p:column headerText="DDD">
+					<h:outputText value="#{telefone.ddd}" />
+				</p:column>
+				<p:column headerText="Número">
+					<h:outputText value="#{telefone.numero_tel}" />
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{telefone.tipo}" />
+				</p:column>
+			   </p:dataTable>
+                 </p:fieldset>
+			<p:panelGrid columns="1">
+				<p:commandButton value="Voltar" action="Pesquisar" />				
+			</p:panelGrid>
+	</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>

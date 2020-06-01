@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Lista todos</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="TELEFONE" modal="true" visible="true"> 
+				
+			<p:panelGrid columns="1">
+				<p:commandButton value="Sair" action="Listar" />
+			</p:panelGrid>
+			
+			<p:dataTable var="telefone" value="#{TelefoneBean.listaTelefone}">
+				
+				<p:column headerText="DDD">
+					<h:outputText value="#{telefone.ddd}" />
+				</p:column>
+				<p:column headerText="Número do telefone">
+					<h:outputText value="#{telefone.numero_tel}" />
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{telefone.tipo}" />
+				</p:column>
+				<p:column headerText="cpf_func">
+					<h:outputText value="#{telefone.cpf_func}" />
+				</p:column>
+			</p:dataTable>
+
+
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>

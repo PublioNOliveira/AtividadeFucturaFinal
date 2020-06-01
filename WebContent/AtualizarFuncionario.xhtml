@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Atualizar Funcionário</title>
+</h:head>
+
+<h:body>
+	<h:form>
+			<p:dialog header="Atualização de funcionário" modal="true" visible="true"> 
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Nome" />
+				<p:inputText value="#{FuncionarioBean.funcionario.nome}" />
+				<p:outputLabel value="Email:" />
+				<p:inputText value="#{FuncionarioBean.funcionario.email}" />
+				<p:outputLabel value="Senha" />
+				<p:inputText   value="#{FuncionarioBean.funcionario.senha}" />
+				<p:outputLabel value="CPF" />
+				<h:outputText   maxlength="11" value="#{FuncionarioBean.funcionario.cpf}" />
+				<p:outputLabel value="Matrícula" />
+				<p:inputText   value="#{FuncionarioBean.funcionario.matricula}" />
+				<p:outputLabel value="Logradouro" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.logradouro}" />
+				<p:outputLabel value="Número" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.numero}" />
+				<p:outputLabel value="Cep" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.cep}" />
+				<p:outputLabel value="Bairro" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.bairro}" />
+				<p:outputLabel value="Cidade" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.cidade}" />
+				<p:outputLabel value="Estado" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.estado}" />
+				<p:outputLabel value="País" />
+				<p:inputText  value="#{FuncionarioBean.funcionario.endereco.pais}" />
+				
+				
+				
+				
+			</p:panelGrid>
+		
+			<p:panelGrid columns="2">
+				<p:commandButton value="Voltar" action="Atualizar" />
+				<p:commandButton value="Atualizar" update="@form"  actionListener="#{FuncionarioBean.AlterarFuncionario}" ajax="true" action="AtualizarFuncionario"/>
+				
+			</p:panelGrid>
+	</p:dialog>
+		
+	</h:form>
+</h:body>
+</html>
